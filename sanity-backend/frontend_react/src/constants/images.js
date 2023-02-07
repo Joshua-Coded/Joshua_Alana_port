@@ -28,6 +28,7 @@ import adidas from '../assets/adidas.png';
 import amazon from '../assets/amazon.png';
 import asus from '../assets/asus.png';
 import bolt from '../assets/bolt.png';
+import Alx from '../assets/Alx.jpg';
 
 
 export default {
@@ -42,6 +43,7 @@ export default {
   node,
   react,
   sass,
+  Alx,
   typescript,
   vue,
   about01,
