@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-
 import { Tooltip as ReactTooltip } from 'react-tooltip'
+
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
-import { images } from '../../constants';
 import './Skills.scss';
 
 const Skills = () => {
   const [experiences, setExperiences] = useState([]);
   const [skills, setSkills] = useState([]);
-
 
   useEffect(() => {
     const query = '*[_type == "experiences"]';
@@ -42,11 +40,7 @@ const Skills = () => {
                 className="app__flex"
                 style={{ backgroundColor: skill.bgColor }}
               >
-                
-                {skill.icon && (
-                <img src={urlFor(skill.icon).url()} />
-                )}
-
+                     <img src={urlFor(skill.icon).url()} alt={skill.name} />
               </div>
               <p className="p-text">{skill.name}</p>
             </motion.div>
@@ -75,7 +69,6 @@ const Skills = () => {
                       <h4 className="bold-text">{work.name}</h4>
                       <p className="p-text">{work.company}</p>
                     </motion.div>
-
                     <ReactTooltip
                       id={work.name}
                       effect="solid"
@@ -83,8 +76,7 @@ const Skills = () => {
                       className="skills-tooltip"
                     >
                       {work.desc}
-                    </ReactTooltip> 
-                 
+                    </ReactTooltip>
                   </>
                 ))}
               </motion.div>
@@ -96,5 +88,8 @@ const Skills = () => {
   );
 };
 
-export default AppWrap(Skills, 'skills')
- 
+export default AppWrap(
+  MotionWrap(Skills, 'app__skills'),
+  'skills',
+  'app__whitebg',
+);
