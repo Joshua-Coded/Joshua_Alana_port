@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import {urlFor, client } from '../../client';
 import './Work.scss';
-import { images } from '../../constants';
+// import { images } from '../../constants';
 
 const Work = () => {
   const [works, setWorks] = useState([]);
@@ -63,7 +63,7 @@ const Work = () => {
             <div
               className="app__work-img app__flex"
             >
-              <img src={urlFor(work.imgUrl)} alt={work.name} />
+              <img src={urlFor(work.imgUrl).url()} alt={work.name} />
 
               <motion.div
                 whileHover={{ opacity: [0, 1] }}
