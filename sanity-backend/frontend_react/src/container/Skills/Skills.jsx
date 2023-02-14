@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import ReactTooltip from 'react-tooltip';
 
+import { Tooltip as ReactTooltip } from 'react-tooltip'
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import { images } from '../../constants';
@@ -42,8 +42,11 @@ const Skills = () => {
                 className="app__flex"
                 style={{ backgroundColor: skill.bgColor }}
               >
-                <img src={images.react} />
-        
+                
+                {skill.icon && (
+                <img src={urlFor(skill.icon).url()} />
+                )}
+
               </div>
               <p className="p-text">{skill.name}</p>
             </motion.div>
