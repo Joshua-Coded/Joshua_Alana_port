@@ -6,7 +6,7 @@ import css from '../assets/css.png';
 import figma from '../assets/figma.png';
 
 import git from '../assets/git.png';
-
+import call from '../assets/call.png'
 import html from '../assets/html.png';
 import javascript from '../assets/javascript.png';
 import node from '../assets/node.png';
@@ -44,6 +44,7 @@ export default {
   react,
   sass,
   Alx,
+  call,
   typescript,
   vue,
   about01,
